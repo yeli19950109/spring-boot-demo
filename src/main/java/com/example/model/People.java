@@ -11,8 +11,6 @@ public class People {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id",length = 36, nullable = false)
-//    @GeneratedValue(generator = "uuid")   //指定生成器名称
-//    @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private int id;
 
     @Column(name = "name")

@@ -1,7 +1,9 @@
 package com.example.controller;
 
 import com.example.dao.PersonRepository;
+import com.example.dao.TestRepoeitory;
 import com.example.model.People;
+import com.example.model.Test;
 import com.example.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,6 +28,9 @@ public class PersonController {
 
     @Autowired
     PersonService personService;
+
+    @Autowired
+    TestRepoeitory testRepoeitory;
 
     @GetMapping(value = "/person")
     private List<People> peopleList(){
@@ -88,6 +93,9 @@ public class PersonController {
     @PostMapping("/person/two")
     public Map personTwo(){
         personService.insertTwo();
+
+        Test test=new Test();
+
         Map res=new HashMap();
         res.put("message","success");
         return res;
